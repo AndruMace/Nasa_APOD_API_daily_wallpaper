@@ -10,3 +10,5 @@ Tools: Python3, Sublime Text Editor, NASA APOD API
 Additional Tools: CRON schduler for linux to automate the task of running the script every 24 hours. 
 
 Links: https://apod.nasa.gov/apod/astropix.html
+
+Requirements: To use this you will have to have Python3+ downloaded as well as the urllib and json libraries. 
