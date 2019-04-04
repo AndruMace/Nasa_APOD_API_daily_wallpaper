@@ -7,7 +7,7 @@ jdata = url.urlopen("https://api.nasa.gov/planetary/apod?api_key=bNHPdxQMifXa2VI
 d = json.loads(jdata)
 
 #create path to store picture
-myPath = '/home/andru/Pictures'
+myPath = '{}/Pictures'.format(os.getenv('HOME'))
 fullfilename = os.path.join(myPath, 'wallpaper.jpg')
 
 #retrieve image from json data and save to path
@@ -17,4 +17,4 @@ url.urlretrieve(d["hdurl"], fullfilename)
 os.system("/usr/bin/gsettings set org.gnome.desktop.background picture-uri nothing")
 
 #set background
-os.system("/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///home/andru/Pictures/wallpaper.jpg")
+os.system("/usr/bin/gsettings set org.gnome.desktop.background picture-uri file://{}".format(fullfilename))
